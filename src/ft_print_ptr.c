@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include "libft.h"
 
 int ft_put_ptr(uintptr_t num, int len)
 {

@@ -1,5 +1,6 @@
 #include "ft_printf.h"
-#include "libft.h"
+#include <stdio.h>
+
 
 int conditionals(va_list list, char c, int len)
 {
