@@ -17,7 +17,8 @@ int ft_print_module(int len);
 
 void validate_hex_ptr(int d, char letter_size);
 int ft_hex_len(uintptr_t n, int len);
-
+void	ft_putchar_fd(char c, int fd);
+size_t ft_power_size(size_t n);
 char	*ft_itoa(int n);
 
 

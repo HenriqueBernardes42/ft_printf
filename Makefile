@@ -5,7 +5,8 @@ CC		= gcc
 AR		= ar -rcs
 SRC_DIR	= src/
 
-SRC = $(SRC_DIR)ft_printf.c\
+SRC = \
+	$(SRC_DIR)ft_printf.c \
  	$(SRC_DIR)ft_print_char.c\
  	$(SRC_DIR)ft_print_int.c\
  	$(SRC_DIR)ft_print_ptr.c\
@@ -20,11 +21,19 @@ SRC = $(SRC_DIR)ft_printf.c\
 all: $(NAME)
 
 $(NAME): get_libft $(OBJ)
-	mv $(LIBFT) $(NAME)
+	@mv $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJ)
 
 get_libft: compile_libft
-	cd libft/ ; cp libft.a .. ; cd ..
+	@cd libft/ ; cp libft.a .. ; cd ..
 
 compile_libft:
-	cd libft/ ; make ; cd ..
+	@cd libft/ ; make ; cd ..
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f libftprintf.a
+
+re: fclean $(NAME)
